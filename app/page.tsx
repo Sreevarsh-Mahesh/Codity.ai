@@ -16,14 +16,12 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <CustomersBanner />
       <ModernSection />
       <CyclesTriageSection />
       <ProductIntelligenceSection />
       <AIFeaturesSection />
       <SystemSection />
       <IntegrationsSection />
-      <CustomerStoriesSection />
       <FoundationsSection />
       <ProductSection />
       <FeaturesDetailedSection />
