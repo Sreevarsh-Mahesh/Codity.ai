@@ -50,8 +50,6 @@ export default function HeroSection() {
             
             <div className="rotating-ring ring-1"></div>
             <div className="rotating-ring ring-2"></div>
-            
-            <div className="logo-glow-effect"></div>
           </div>
         </div>
       </div>

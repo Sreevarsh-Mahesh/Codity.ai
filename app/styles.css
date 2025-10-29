@@ -390,7 +390,7 @@ body {
     position: relative;
     z-index: 10;
     filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.4));
-    animation: logo-combined 12s ease-in-out infinite;
+    animation: logo-combined 20s cubic-bezier(0.37, 0, 0.63, 1) infinite;
     transition: filter 0.3s ease, transform 0.3s ease;
     transform-origin: center center;
 }
@@ -410,28 +410,18 @@ body {
 }
 
 @keyframes logo-combined {
-    /* Normal float for most of the time */
+    /* Smooth floating levitation - organic movement */
     0% { transform: translateY(0px) rotate(0deg); }
-    6.25% { transform: translateY(-15px) rotate(0deg); }
-    12.5% { transform: translateY(0px) rotate(0deg); }
-    18.75% { transform: translateY(-15px) rotate(0deg); }
-    25% { transform: translateY(0px) rotate(0deg); }
-    31.25% { transform: translateY(-15px) rotate(0deg); }
-    37.5% { transform: translateY(0px) rotate(0deg); }
-    43.75% { transform: translateY(-15px) rotate(0deg); }
-    /* Hourglass rotation happens occasionally */
-    45% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(0px) rotate(180deg); }
-    55% { transform: translateY(0px) rotate(180deg); }
-    60% { transform: translateY(0px) rotate(360deg); }
-    /* Back to normal float */
-    62.5% { transform: translateY(0px) rotate(360deg); }
-    68.75% { transform: translateY(-15px) rotate(360deg); }
-    75% { transform: translateY(0px) rotate(360deg); }
-    81.25% { transform: translateY(-15px) rotate(360deg); }
-    87.5% { transform: translateY(0px) rotate(360deg); }
-    93.75% { transform: translateY(-15px) rotate(360deg); }
-    100% { transform: translateY(0px) rotate(360deg); }
+    20% { transform: translateY(-10px) rotate(0deg); }
+    40% { transform: translateY(-5px) rotate(0deg); }
+    60% { transform: translateY(-15px) rotate(0deg); }
+    70% { transform: translateY(-8px) rotate(0deg); }
+    80% { transform: translateY(-12px) rotate(0deg); }
+    /* Hourglass rotation happens occasionally - rotate 180deg then back */
+    85% { transform: translateY(-10px) rotate(0deg); }
+    90% { transform: translateY(-10px) rotate(180deg); }
+    95% { transform: translateY(-10px) rotate(180deg); }
+    100% { transform: translateY(0px) rotate(180deg); }
 }
 
 .animated-brace {
@@ -487,22 +477,6 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.particle-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: glow-pulse 2s ease-in-out infinite;
-}
-
-@keyframes glow-pulse {
-    0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
-    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.5); }
-}
 
 .particle-1 {
     animation: orbit-1 12s linear infinite;
@@ -576,36 +550,6 @@ body {
     to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* Pulsing Glow Effect */
-.logo-glow-effect {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: glow-expand 4s ease-in-out infinite;
-    z-index: 1;
-}
-
-[data-theme="light"] .logo-glow-effect {
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
-}
-
-@keyframes glow-expand {
-    0%, 100% { 
-        width: 200px; 
-        height: 200px; 
-        opacity: 0.5; 
-    }
-    50% { 
-        width: 280px; 
-        height: 280px; 
-        opacity: 0.8; 
-    }
-}
 
 .hero-visual {
     margin-top: 4rem;
