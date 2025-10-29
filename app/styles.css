@@ -416,12 +416,11 @@ body {
     36% { transform: translateY(-6px) rotate(0deg); }
     54% { transform: translateY(-14px) rotate(0deg); }
     72% { transform: translateY(-8px) rotate(0deg); }
-    /* Hourglass rotation happens once per cycle - rotate 180deg */
-    85% { transform: translateY(-10px) rotate(0deg); }
-    90% { transform: translateY(-10px) rotate(180deg); }
-    95% { transform: translateY(-10px) rotate(180deg); }
-    /* Rotate back to 0deg at end to loop smoothly into next cycle */
-    100% { transform: translateY(0px) rotate(0deg); }
+    80% { transform: translateY(-12px) rotate(0deg); }
+    /* Hourglass rotation happens once per cycle - rotate 180deg, stay there until cycle ends */
+    88% { transform: translateY(-10px) rotate(0deg); }
+    92% { transform: translateY(-10px) rotate(180deg); }
+    100% { transform: translateY(0px) rotate(180deg); }
 }
 
 .animated-brace {
