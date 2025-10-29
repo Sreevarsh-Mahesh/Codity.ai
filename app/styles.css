@@ -390,14 +390,15 @@ body {
     position: relative;
     z-index: 10;
     filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.4));
-    animation: logo-float 6s ease-in-out infinite, logo-hourglass 12s ease-in-out infinite;
-    transition: filter 0.3s ease;
+    animation: logo-combined 12s ease-in-out infinite;
+    transition: filter 0.3s ease, transform 0.3s ease;
     transform-origin: center center;
 }
 
 .animated-logo-container:hover .main-animated-logo {
     filter: drop-shadow(0 0 60px rgba(255, 255, 255, 0.6));
-    transform: scale(1.1);
+    animation-play-state: paused;
+    transform: scale(1.1) translateY(-10px);
 }
 
 [data-theme="light"] .main-animated-logo {
@@ -408,17 +409,28 @@ body {
     filter: drop-shadow(0 0 60px rgba(0, 0, 0, 0.3));
 }
 
-@keyframes logo-float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(0deg); }
-}
-
-@keyframes logo-hourglass {
+@keyframes logo-combined {
+    /* Normal float for most of the time */
     0% { transform: translateY(0px) rotate(0deg); }
-    42.5% { transform: translateY(0px) rotate(0deg); }
+    6.25% { transform: translateY(-15px) rotate(0deg); }
+    12.5% { transform: translateY(0px) rotate(0deg); }
+    18.75% { transform: translateY(-15px) rotate(0deg); }
+    25% { transform: translateY(0px) rotate(0deg); }
+    31.25% { transform: translateY(-15px) rotate(0deg); }
+    37.5% { transform: translateY(0px) rotate(0deg); }
+    43.75% { transform: translateY(-15px) rotate(0deg); }
+    /* Hourglass rotation happens occasionally */
+    45% { transform: translateY(0px) rotate(0deg); }
     50% { transform: translateY(0px) rotate(180deg); }
-    57.5% { transform: translateY(0px) rotate(180deg); }
-    65% { transform: translateY(0px) rotate(360deg); }
+    55% { transform: translateY(0px) rotate(180deg); }
+    60% { transform: translateY(0px) rotate(360deg); }
+    /* Back to normal float */
+    62.5% { transform: translateY(0px) rotate(360deg); }
+    68.75% { transform: translateY(-15px) rotate(360deg); }
+    75% { transform: translateY(0px) rotate(360deg); }
+    81.25% { transform: translateY(-15px) rotate(360deg); }
+    87.5% { transform: translateY(0px) rotate(360deg); }
+    93.75% { transform: translateY(-15px) rotate(360deg); }
     100% { transform: translateY(0px) rotate(360deg); }
 }
 
