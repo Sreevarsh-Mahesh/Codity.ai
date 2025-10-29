@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function HeroSection() {
   return (
@@ -25,13 +26,14 @@ export default function HeroSection() {
         
         <div className="hero-logo-animation">
           <div className="animated-logo-container">
-            <svg width="250" height="250" viewBox="0 0 32 32" fill="none" className="main-animated-logo">
-              <path className="animated-brace left" d="M10 8C8 8 7 9 7 10V13C7 14 6 15 5 15C6 15 7 16 7 17V20C7 21 8 22 10 22" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-              <path className="animated-brace right" d="M22 8C24 8 25 9 25 10V13C25 14 26 15 27 15C26 15 25 16 25 17V20C25 21 24 22 22 22" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-              <circle className="animated-dot dot1" cx="13" cy="15" r="1.8" fill="white"/>
-              <circle className="animated-dot dot2" cx="16" cy="15" r="1.8" fill="white"/>
-              <circle className="animated-dot dot3" cx="19" cy="15" r="1.8" fill="white"/>
-            </svg>
+            <Image 
+              src="/logo-main.svg" 
+              alt="Codity Logo" 
+              width={250} 
+              height={250} 
+              className="main-animated-logo"
+              priority
+            />
             
             <div className="particle particle-1">
               <div className="particle-glow"></div>
