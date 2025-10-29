@@ -4,8 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import GooeyNav from './GooeyNav';
-import './Navbar.css';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -15,7 +13,6 @@ export default function Navbar() {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     setTheme(savedTheme || systemTheme);
-    document.documentElement.setAttribute('data-theme', savedTheme || systemTheme);
   }, []);
 
   const toggleTheme = () => {
@@ -25,19 +22,9 @@ export default function Navbar() {
     localStorage.setItem('theme', newTheme);
   };
 
-  const navLinks = [
-    { label: 'Features', href: '/features' },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Contact', href: '/contact' },
-  ];
-
-  const activeIndex = navLinks.findIndex(link => pathname === link.href);
-  const finalActiveIndex = activeIndex >= 0 ? activeIndex : 0;
-
   return (
-    <nav className="navbar-wrapper">
-      <div className="navbar-container">
+    <nav className="navbar">
+      <div className="nav-container">
         <div className="nav-left">
           <Link href="/" className="logo">
             <Image 
@@ -50,17 +37,11 @@ export default function Navbar() {
             <span>codity</span>
           </Link>
         </div>
-        <div className="nav-center-wrapper">
-          <GooeyNav
-            items={navLinks}
-            particleCount={15}
-            particleDistances={[90, 10]}
-            particleR={100}
-            initialActiveIndex={finalActiveIndex}
-            animationTime={600}
-            timeVariance={300}
-            colors={[1, 2, 3, 1, 2, 3, 1, 4]}
-          />
+        <div className="nav-center">
+          <Link href="/features" className={`nav-link ${pathname === '/features' ? 'active' : ''}`}>Features</Link>
+          <Link href="/pricing" className={`nav-link ${pathname === '/pricing' ? 'active' : ''}`}>Pricing</Link>
+          <Link href="/blog" className={`nav-link ${pathname === '/blog' ? 'active' : ''}`}>Blog</Link>
+          <Link href="/contact" className={`nav-link ${pathname === '/contact' ? 'active' : ''}`}>Contact</Link>
         </div>
         <div className="nav-right">
           <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
