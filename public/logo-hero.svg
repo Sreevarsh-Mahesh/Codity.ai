@@ -1,0 +1,49 @@
+<svg width="383" height="436" viewBox="0 0 383 436" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <!-- Blue Gradient for the logo -->
+  <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+    <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+  </linearGradient>
+  
+  <!-- Enhanced glow effect -->
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="20" result="coloredBlur"/>
+    <feMerge>
+      <feMergeNode in="coloredBlur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  
+  <!-- Outer glow -->
+  <filter id="outerGlow" x="-100%" y="-100%" width="300%" height="300%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="25"/>
+    <feOffset dx="0" dy="0" result="offsetblur"/>
+    <feFlood flood-color="#3b82f6" flood-opacity="0.5"/>
+    <feComposite in2="offsetblur" operator="in"/>
+    <feMerge>
+      <feMergeNode/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+</defs>
+
+<!-- Irregular halo background -->
+<path d="M191.5 50 C250 60, 310 100, 330 160 C350 220, 340 280, 310 330 C280 380, 230 410, 170 405 C110 400, 60 370, 40 310 C20 250, 30 180, 70 130 C110 80, 150 55, 191.5 50 Z" 
+      fill="#3b82f6" opacity="0.12" filter="url(#glow)"/>
+<path d="M191.5 70 C240 78, 290 110, 305 155 C320 200, 312 250, 290 290 C268 330, 230 355, 180 352 C130 349, 85 325, 70 280 C55 235, 62 185, 90 145 C118 105, 155 68, 191.5 70 Z" 
+      fill="#60a5fa" opacity="0.08" filter="url(#glow)"/>
+
+<!-- Main logo with gradient and glow -->
+<g filter="url(#outerGlow)">
+  <path d="M74.2998 27.3H171.3V78.8H79.2998V146.8L132.3 213.8L78.7998 282.8V349.3H171.8V400.3H73.7998V353.8H27.2998V273.8L73.2998 217.3L27.2998 162.8V74.3H73.7998L74.2998 27.3Z" fill="url(#blueGradient)" stroke="url(#blueGradient)" stroke-width="2"/>
+  <path d="M300.3 27.3H203.3V78.8H295.3V146.8L242.3 213.8L295.8 282.8V349.3H202.8V400.3H300.8V353.8H347.3V273.8L301.3 217.3L347.3 162.8V74.3H300.8L300.3 27.3Z" fill="url(#blueGradient)" stroke="url(#blueGradient)" stroke-width="2"/>
+</g>
+
+<!-- Inner highlight for depth -->
+<g opacity="0.6">
+  <path d="M74.2998 27.3H171.3V78.8H79.2998V146.8L132.3 213.8L78.7998 282.8V349.3H171.8V400.3H73.7998V353.8H27.2998V273.8L73.2998 217.3L27.2998 162.8V74.3H73.7998L74.2998 27.3Z" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
+  <path d="M300.3 27.3H203.3V78.8H295.3V146.8L242.3 213.8L295.8 282.8V349.3H202.8V400.3H300.8V353.8H347.3V273.8L301.3 217.3L347.3 162.8V74.3H300.8L300.3 27.3Z" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.5"/>
+</g>
+</svg>

@@ -27,13 +27,13 @@ export default function HeroSection() {
         <div className="hero-logo-animation">
           <div className="animated-logo-container">
             <Image 
-              src="/logo-glow.svg" 
+              src="/logo-hero.svg" 
               alt="Codity Logo" 
-              width={250} 
-              height={285} 
+              width={383} 
+              height={436} 
               className="main-animated-logo"
               priority
-              style={{width: '250px', height: 'auto'}}
+              style={{width: '280px', height: 'auto'}}
             />
             
             <div className="particle particle-1">
@@ -48,9 +48,6 @@ export default function HeroSection() {
             <div className="particle particle-4">
               <div className="particle-glow"></div>
             </div>
-            
-            <div className="rotating-ring ring-1"></div>
-            <div className="rotating-ring ring-2"></div>
           </div>
         </div>
       </div>

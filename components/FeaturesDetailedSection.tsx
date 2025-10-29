@@ -3,54 +3,98 @@ export default function FeaturesDetailedSection() {
     <section id="features" className="features-detailed-section">
       <div className="container">
         <div className="section-header-center">
-          <span className="section-badge">Features</span>
-          <h2 className="mega-title">Powerful features for modern teams</h2>
+          <span className="section-badge-enhanced">Core Capabilities</span>
+          <h2 className="mega-title-enhanced">Everything You Need to Ship Better Code</h2>
+          <p className="section-subtitle">
+            Comprehensive tools and intelligent automation designed to accelerate your development workflow 
+            while maintaining the highest standards of code quality and security.
+          </p>
         </div>
 
-        <div className="features-list">
+        <div className="features-list-enhanced">
           {/* New feature: Fastest AI Code Reviewer */}
-          <div className="feature-row">
-            <div className="feature-content">
-              <div className="feature-badge">Speed</div>
-              <h3>Fastest AI Code Reviewer</h3>
-              <p>Codity delivers code review feedback in seconds — not hours. It surfaces high-confidence suggestions, automated fixes, and clear explanations so reviewers and authors move faster.</p>
-              <ul className="feature-list">
-                <li>✓ Reviews typical PRs in under 2 seconds</li>
-                <li>✓ One-click fixes and inline suggestions</li>
-                <li>✓ Helps with refactoring, security, and style consistency</li>
+          <div className="feature-row-enhanced">
+            <div className="feature-content-enhanced">
+              <div className="feature-badge-modern speed">⚡ Speed & Performance</div>
+              <h3 className="feature-title-enhanced">Fastest AI Code Reviewer in the Market</h3>
+              <p className="feature-description-enhanced">
+                Codity revolutionizes code review speed with AI-powered analysis that delivers comprehensive 
+                feedback in mere seconds. Our intelligent engine surfaces high-confidence suggestions, automated 
+                fixes, and crystal-clear explanations, enabling both reviewers and authors to maintain velocity 
+                without compromising quality.
+              </p>
+              <ul className="feature-list-enhanced">
+                <li><span className="list-icon">✓</span> Reviews typical PRs in under 2 seconds</li>
+                <li><span className="list-icon">✓</span> One-click fixes and inline suggestions</li>
+                <li><span className="list-icon">✓</span> Intelligent refactoring, security, and style recommendations</li>
+                <li><span className="list-icon">✓</span> Real-time feedback as you code</li>
               </ul>
             </div>
             <div className="feature-visual">
               <div className="speed-demo">
-                <div className="speed-number">2s</div>
-                <div className="speed-meta">
-                  <div className="speed-caption">average review time</div>
-                  <div className="speed-bars" aria-hidden>
-                    <span className="speed-bar"></span>
-                    <span className="speed-bar"></span>
-                    <span className="speed-bar"></span>
+                <div className="speed-left">
+                  <div className="speed-number">
+                    <span className="speed-icon" aria-hidden>⚡</span>
+                    <span className="speed-value">2s</span>
                   </div>
+                  <div className="speed-meta">
+                    <div className="speed-caption">average review time</div>
+                    <div className="speed-bars" aria-hidden>
+                      <span className="speed-bar"></span>
+                      <span className="speed-bar"></span>
+                      <span className="speed-bar"></span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Extra compact content to reduce empty space */}
+                <div className="speed-extras" aria-hidden>
+                  <div className="mini-pr-card">
+                    <div className="pr-header">
+                      <div className="pr-title">PR: fix/auth-bug</div>
+                      <div className="pr-badge">High</div>
+                    </div>
+                    <div className="pr-stats">
+                      <span>Files: <strong>3</strong></span>
+                      <span>Comments: <strong>4</strong></span>
+                    </div>
+                    <div className="pr-snippet">const isAdmin = user.role === 'admin';</div>
+                    <div className="pr-actions">
+                      <button className="apply-btn">Apply suggestion</button>
+                      <button className="view-btn">View PR</button>
+                    </div>
+                  </div>
+
+                  <ul className="use-cases">
+                    <li>Refactor suggestions</li>
+                    <li>Security & vulnerability fixes</li>
+                    <li>Style & lint consistency</li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-          <div className="feature-row">
-            <div className="feature-content">
-              <div className="feature-badge">AI-Powered</div>
-              <h3>Intelligent Bug Detection</h3>
-              <p>Our AI models are trained on billions of lines of code from open source projects, enabling them to detect subtle bugs that traditional linters miss.</p>
-              <div className="feature-stats-row">
-                <div className="stat">
-                  <span className="stat-num">98.7%</span>
-                  <span className="stat-text">Accuracy</span>
+          <div className="feature-row-enhanced alternate">
+            <div className="feature-content-enhanced">
+              <div className="feature-badge-modern ai">🤖 AI-Powered Intelligence</div>
+              <h3 className="feature-title-enhanced">Next-Generation Bug Detection</h3>
+              <p className="feature-description-enhanced">
+                Powered by state-of-the-art AI models trained on billions of lines of open-source code, 
+                our intelligent detection engine catches subtle bugs, security vulnerabilities, and code smells 
+                that traditional linters completely miss. Experience the future of automated code analysis.
+              </p>
+              <div className="feature-stats-row-enhanced">
+                <div className="stat-enhanced">
+                  <span className="stat-num-enhanced">98.7%</span>
+                  <span className="stat-text-enhanced">Detection Accuracy</span>
                 </div>
-                <div className="stat">
-                  <span className="stat-num">10B+</span>
-                  <span className="stat-text">Training Lines</span>
+                <div className="stat-enhanced">
+                  <span className="stat-num-enhanced">10B+</span>
+                  <span className="stat-text-enhanced">Training Data Lines</span>
                 </div>
-                <div className="stat">
-                  <span className="stat-num">0.3%</span>
-                  <span className="stat-text">False Positives</span>
+                <div className="stat-enhanced">
+                  <span className="stat-num-enhanced">0.3%</span>
+                  <span className="stat-text-enhanced">False Positive Rate</span>
                 </div>
               </div>
             </div>
@@ -73,16 +117,22 @@ export default function FeaturesDetailedSection() {
             </div>
           </div>
 
-          <div className="feature-row reverse">
-            <div className="feature-content">
-              <div className="feature-badge">Security</div>
-              <h3>Advanced Security Scanning</h3>
-              <p>Protect your codebase with comprehensive security analysis covering OWASP Top 10, CVEs, and custom security rules.</p>
-              <ul className="security-list">
-                <li><span className="icon">🛡️</span> SQL Injection Prevention</li>
-                <li><span className="icon">🔐</span> XSS & CSRF Detection</li>
-                <li><span className="icon">🔑</span> Exposed Secrets Scanning</li>
-                <li><span className="icon">⚠️</span> Dependency Vulnerabilities</li>
+          <div className="feature-row-enhanced">
+            <div className="feature-content-enhanced">
+              <div className="feature-badge-modern security">🔒 Enterprise Security</div>
+              <h3 className="feature-title-enhanced">Military-Grade Security Scanning</h3>
+              <p className="feature-description-enhanced">
+                Protect your codebase with enterprise-level security analysis that goes beyond basic checks. 
+                Our comprehensive security engine covers OWASP Top 10, CVE databases, custom security rules, 
+                and emerging threat patterns to keep your application safe from vulnerabilities.
+              </p>
+              <ul className="security-list-enhanced">
+                <li><span className="security-icon">🛡️</span> <strong>SQL Injection Prevention</strong> - Deep query analysis</li>
+                <li><span className="security-icon">🔐</span> <strong>XSS & CSRF Detection</strong> - Client-side security</li>
+                <li><span className="security-icon">🔑</span> <strong>Exposed Secrets Scanning</strong> - API keys & credentials</li>
+                <li><span className="security-icon">⚠️</span> <strong>Dependency Vulnerabilities</strong> - Real-time CVE monitoring</li>
+                <li><span className="security-icon">🔍</span> <strong>Code Injection Defense</strong> - Runtime protection</li>
+                <li><span className="security-icon">📋</span> <strong>Compliance Checking</strong> - GDPR, SOC2, HIPAA</li>
               </ul>
             </div>
             <div className="feature-visual">
