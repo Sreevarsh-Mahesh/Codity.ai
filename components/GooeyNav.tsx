@@ -60,7 +60,6 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     for (let i = 0; i < particleCount; i++) {
       const t = animationTime * 2 + noise(timeVariance * 2);
       const p = createParticle(i, t, d, r);
-      element.classList.remove('active');
       setTimeout(() => {
         const particle = document.createElement('span');
         const point = document.createElement('span');
@@ -84,7 +83,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             element.removeChild(particle);
           } catch {}
         }, t);
-      }, 30);
+      }, 30 * i);
     }
   };
   const updateEffectPosition = (element: HTMLElement) => {
@@ -117,6 +116,9 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
       textRef.current.classList.add('active');
     }
     if (filterRef.current) {
+      filterRef.current.classList.remove('active');
+      void filterRef.current.offsetWidth;
+      filterRef.current.classList.add('active');
       makeParticles(filterRef.current);
     }
     // Navigate using Next.js router
@@ -141,14 +143,13 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     }
   };
   useEffect(() => {
-    if (!navRef.current || !containerRef.current) return;
+    if (!navRef.current || !containerRef.current || !filterRef.current) return;
     const activeLi = navRef.current.querySelectorAll('li')[activeIndex] as HTMLElement;
     if (activeLi) {
       updateEffectPosition(activeLi);
       textRef.current?.classList.add('active');
-    }
-    // Create initial particles on mount
-    if (filterRef.current) {
+      filterRef.current.classList.add('active');
+      // Create initial particles
       makeParticles(filterRef.current);
     }
     const resizeObserver = new ResizeObserver(() => {
@@ -165,7 +166,6 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     <>
       <style jsx>{`
         :root {
-          --linear-ease: linear(0, 0.068, 0.19 2.7%, 0.804 8.1%, 1.037, 1.199 13.2%, 1.245, 1.27 15.8%, 1.274, 1.272 17.4%, 1.249 19.1%, 0.996 28%, 0.949, 0.928 33.3%, 0.926, 0.933 36.8%, 1.001 45.6%, 1.013, 1.019 50.8%, 1.018 54.4%, 1 63.1%, 0.995 68%, 1.001 85%, 1);
           --color-1: rgba(255, 255, 255, 0.9);
           --color-2: rgba(255, 255, 255, 0.7);
           --color-3: rgba(255, 255, 255, 0.5);
@@ -185,6 +185,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
           color: white;
           transition: color 0.3s ease;
           font-weight: 500;
+          font-size: inherit;
         }
         .effect.text.active {
           color: black;
@@ -210,16 +211,12 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
           transform: scale(0);
           opacity: 0;
           z-index: -1;
-          border-radius: 9999px;
+          border-radius: 8px;
+          transition: transform 0.3s ease, opacity 0.3s ease;
         }
-        .effect.active::after {
-          animation: pill 0.3s ease both;
-        }
-        @keyframes pill {
-          to {
-            transform: scale(1);
-            opacity: 1;
-          }
+        .effect.filter.active::after {
+          transform: scale(1);
+          opacity: 1;
         }
         .particle,
         .point {
