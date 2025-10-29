@@ -61,7 +61,7 @@
   align-items: center;
   position: relative;
   z-index: 10;
-  overflow: hidden;
+  overflow: visible;
   height: 100%;
 }
 
@@ -71,7 +71,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .gooey-nav-container nav {

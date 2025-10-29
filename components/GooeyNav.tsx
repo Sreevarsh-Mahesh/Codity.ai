@@ -147,6 +147,10 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
       updateEffectPosition(activeLi);
       textRef.current?.classList.add('active');
     }
+    // Create initial particles on mount
+    if (filterRef.current) {
+      makeParticles(filterRef.current);
+    }
     const resizeObserver = new ResizeObserver(() => {
       const currentActiveLi = navRef.current?.querySelectorAll('li')[activeIndex] as HTMLElement;
       if (currentActiveLi) {
@@ -175,7 +179,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
           place-items: center;
           z-index: 1;
           border-radius: 8px;
-          overflow: hidden;
+          overflow: visible;
         }
         .effect.text {
           color: white;
@@ -188,14 +192,14 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
         .effect.filter {
           filter: blur(7px) contrast(100) blur(0);
           mix-blend-mode: lighten;
-          overflow: hidden;
+          overflow: visible;
         }
         .effect.filter::before {
           content: "";
           position: absolute;
-          inset: -20px;
+          inset: -75px;
           z-index: -2;
-          background: transparent;
+          background: black;
           border-radius: 8px;
         }
         .effect.filter::after {
@@ -229,9 +233,10 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
         .particle {
           --time: 5s;
           position: absolute;
-          top: calc(50% - 8px);
-          left: calc(50% - 8px);
+          top: calc(50% - 10px);
+          left: calc(50% - 10px);
           animation: particle calc(var(--time)) ease 1 -350ms;
+          z-index: 10;
         }
         .point {
           background: var(--color);
