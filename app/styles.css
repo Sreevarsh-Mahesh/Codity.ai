@@ -1108,6 +1108,72 @@ body {
     100% { transform: translateX(100%); opacity: 0; }
 }
 
+/* Fastest AI Code Reviewer visuals */
+.speed-demo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.speed-number {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(124,58,237,0.06));
+    position: relative;
+    box-shadow: 0 8px 30px rgba(59,130,246,0.06);
+}
+.speed-number::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 18px;
+    background: radial-gradient(circle at center, rgba(59,130,246,0.18), transparent 40%);
+    animation: pulseSpeed 1.8s ease-out infinite;
+    pointer-events: none;
+}
+@keyframes pulseSpeed {
+    0% { transform: scale(0.92); opacity: 0.7; }
+    50% { transform: scale(1.12); opacity: 0.35; }
+    100% { transform: scale(0.92); opacity: 0.7; }
+}
+.speed-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.speed-caption {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+.speed-bars {
+    display: flex;
+    gap: 6px;
+    align-items: end;
+    margin-top: 4px;
+}
+.speed-bar {
+    width: 6px;
+    height: 18px;
+    background: linear-gradient(180deg, var(--accent-blue), var(--accent-purple));
+    border-radius: 3px;
+    transform-origin: center bottom;
+    animation: barWave 1s ease-in-out infinite;
+}
+.speed-bar:nth-child(1) { animation-delay: 0s; }
+.speed-bar:nth-child(2) { animation-delay: 0.15s; }
+.speed-bar:nth-child(3) { animation-delay: 0.3s; }
+@keyframes barWave {
+    0% { transform: scaleY(0.45); opacity: 0.6; }
+    50% { transform: scaleY(1.5); opacity: 1; }
+    100% { transform: scaleY(0.45); opacity: 0.6; }
+}
+
 .card-content {
     padding: 2rem;
     display: flex;

@@ -8,6 +8,32 @@ export default function FeaturesDetailedSection() {
         </div>
 
         <div className="features-list">
+          {/* New feature: Fastest AI Code Reviewer */}
+          <div className="feature-row">
+            <div className="feature-content">
+              <div className="feature-badge">Speed</div>
+              <h3>Fastest AI Code Reviewer</h3>
+              <p>Codity delivers code review feedback in seconds — not hours. It surfaces high-confidence suggestions, automated fixes, and clear explanations so reviewers and authors move faster.</p>
+              <ul className="feature-list">
+                <li>✓ Reviews typical PRs in under 2 seconds</li>
+                <li>✓ One-click fixes and inline suggestions</li>
+                <li>✓ Helps with refactoring, security, and style consistency</li>
+              </ul>
+            </div>
+            <div className="feature-visual">
+              <div className="speed-demo">
+                <div className="speed-number">2s</div>
+                <div className="speed-meta">
+                  <div className="speed-caption">average review time</div>
+                  <div className="speed-bars" aria-hidden>
+                    <span className="speed-bar"></span>
+                    <span className="speed-bar"></span>
+                    <span className="speed-bar"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="feature-row">
             <div className="feature-content">
               <div className="feature-badge">AI-Powered</div>
