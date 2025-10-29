@@ -412,16 +412,15 @@ body {
 @keyframes logo-combined {
     /* Smooth floating levitation - organic movement */
     0% { transform: translateY(0px) rotate(0deg); }
-    15% { transform: translateY(-10px) rotate(0deg); }
-    30% { transform: translateY(-6px) rotate(0deg); }
-    45% { transform: translateY(-14px) rotate(0deg); }
-    60% { transform: translateY(-8px) rotate(0deg); }
-    75% { transform: translateY(-12px) rotate(0deg); }
-    /* Hourglass rotation happens occasionally - rotate 180deg then back to 0deg */
-    82% { transform: translateY(-10px) rotate(0deg); }
-    86% { transform: translateY(-10px) rotate(180deg); }
+    18% { transform: translateY(-10px) rotate(0deg); }
+    36% { transform: translateY(-6px) rotate(0deg); }
+    54% { transform: translateY(-14px) rotate(0deg); }
+    72% { transform: translateY(-8px) rotate(0deg); }
+    /* Hourglass rotation happens once per cycle - rotate 180deg */
+    85% { transform: translateY(-10px) rotate(0deg); }
     90% { transform: translateY(-10px) rotate(180deg); }
-    94% { transform: translateY(-10px) rotate(0deg); }
+    95% { transform: translateY(-10px) rotate(180deg); }
+    /* Rotate back to 0deg at end to loop smoothly into next cycle */
     100% { transform: translateY(0px) rotate(0deg); }
 }
 

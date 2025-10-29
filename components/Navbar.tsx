@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
@@ -26,13 +27,13 @@ export default function Navbar() {
       <div className="nav-container">
         <div className="nav-left">
           <Link href="/" className="logo">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <path d="M10 8C8 8 7 9 7 10V13C7 14 6 15 5 15C6 15 7 16 7 17V20C7 21 8 22 10 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none"/>
-              <path d="M22 8C24 8 25 9 25 10V13C25 14 26 15 27 15C26 15 25 16 25 17V20C25 21 24 22 22 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none"/>
-              <circle cx="13" cy="15" r="1.5" fill="currentColor"/>
-              <circle cx="16" cy="15" r="1.5" fill="currentColor"/>
-              <circle cx="19" cy="15" r="1.5" fill="currentColor"/>
-            </svg>
+            <Image 
+              src="/logo-main.svg" 
+              alt="Codity" 
+              width={32} 
+              height={37} 
+              style={{width: '32px', height: 'auto'}}
+            />
             <span>codity</span>
           </Link>
         </div>
