@@ -266,7 +266,7 @@ body {
 .hero {
     margin-top: 100px;
     min-height: calc(100vh - 100px);
-    padding: 6rem 2rem;
+    padding: 4rem 2rem;
     position: relative;
     overflow: hidden;
     display: flex;

@@ -3,14 +3,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
+import GooeyNav from './GooeyNav';
 import './Navbar.css';
 
 export default function Navbar() {
   const pathname = usePathname();
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
-  const [hovered, setHovered] = useState<string | null>(null);
-  const blobRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
@@ -27,40 +26,18 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { href: '/features', label: 'Features' },
-    { href: '/pricing', label: 'Pricing' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/contact', label: 'Contact' },
+    { label: 'Features', href: '/features' },
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Contact', href: '/contact' },
   ];
 
-  const handleMouseEnter = (href: string, element: HTMLDivElement | null) => {
-    if (element) {
-      const rect = element.getBoundingClientRect();
-      const container = element.closest('.gooey-nav-center');
-      if (container) {
-        const containerRect = container.getBoundingClientRect();
-        const blob = blobRefs.current[href];
-        if (blob) {
-          blob.style.width = `${rect.width}px`;
-          blob.style.left = `${rect.left - containerRect.left}px`;
-          blob.style.opacity = '1';
-        }
-      }
-    }
-    setHovered(href);
-  };
-
-  const handleMouseLeave = (href: string) => {
-    const blob = blobRefs.current[href];
-    if (blob) {
-      blob.style.opacity = '0';
-    }
-    setHovered(null);
-  };
+  const activeIndex = navLinks.findIndex(link => pathname === link.href);
+  const finalActiveIndex = activeIndex >= 0 ? activeIndex : 0;
 
   return (
-    <nav className="gooey-nav">
-      <div className="gooey-nav-container">
+    <nav className="navbar-wrapper">
+      <div className="navbar-container">
         <div className="nav-left">
           <Link href="/" className="logo">
             <Image 
@@ -73,31 +50,17 @@ export default function Navbar() {
             <span>codity</span>
           </Link>
         </div>
-        <div className="gooey-nav-center">
-          <div className="gooey-blob-container">
-            {navLinks.map((link) => (
-              <div
-                key={link.href}
-                ref={(el) => { blobRefs.current[link.href] = el; }}
-                className="gooey-blob"
-              />
-            ))}
-          </div>
-          {navLinks.map((link) => (
-            <div
-              key={link.href}
-              className="nav-link-wrapper"
-              onMouseEnter={(e) => handleMouseEnter(link.href, e.currentTarget)}
-              onMouseLeave={() => handleMouseLeave(link.href)}
-            >
-              <Link
-                href={link.href}
-                className={`nav-link ${pathname === link.href ? 'active' : ''}`}
-              >
-                {link.label}
-              </Link>
-            </div>
-          ))}
+        <div className="nav-center-wrapper">
+          <GooeyNav
+            items={navLinks}
+            particleCount={15}
+            particleDistances={[90, 10]}
+            particleR={100}
+            initialActiveIndex={finalActiveIndex}
+            animationTime={600}
+            timeVariance={300}
+            colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+          />
         </div>
         <div className="nav-right">
           <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
