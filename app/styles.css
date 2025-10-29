@@ -265,9 +265,13 @@ body {
 /* Hero Section */
 .hero {
     margin-top: 80px;
-    padding: 6rem 2rem 2rem;
+    min-height: calc(100vh - 80px);
+    padding: 6rem 2rem;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero::before {
@@ -294,7 +298,8 @@ body {
 
 .hero-top {
     max-width: 1400px;
-    margin: 0 auto 4rem;
+    width: 100%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 350px;
     gap: 4rem;
