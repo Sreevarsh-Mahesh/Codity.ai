@@ -174,6 +174,8 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
           display: grid;
           place-items: center;
           z-index: 1;
+          border-radius: 8px;
+          overflow: hidden;
         }
         .effect.text {
           color: white;
@@ -186,13 +188,15 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
         .effect.filter {
           filter: blur(7px) contrast(100) blur(0);
           mix-blend-mode: lighten;
+          overflow: hidden;
         }
         .effect.filter::before {
           content: "";
           position: absolute;
-          inset: -75px;
+          inset: -20px;
           z-index: -2;
-          background: black;
+          background: transparent;
+          border-radius: 8px;
         }
         .effect.filter::after {
           content: "";
