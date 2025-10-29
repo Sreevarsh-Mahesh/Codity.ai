@@ -1311,6 +1311,78 @@ body::before {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.content-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.content-block:has(.section-heading-blue)::before {
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+}
+
+.content-block:has(.section-heading-orange)::before {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.content-block:has(.section-heading-green)::before {
+    background: #10b981;
+}
+
+.content-block:has(.section-heading-purple)::before {
+    background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+}
+
+/* Section Heading Color Coding */
+.section-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.section-heading-blue {
+    color: #3b82f6;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-heading-orange {
+    color: #f59e0b;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-heading-green {
+    color: #10b981;
+    background: linear-gradient(135deg, #10b981, #059669);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-heading-purple {
+    color: #8b5cf6;
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .text-content h2 {
@@ -1331,11 +1403,29 @@ body::before {
 
 .cycle-card,
 .triage-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
     padding: 2rem;
     color: var(--card-text);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cycle-card::before,
+.triage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+}
+
+.triage-card::before {
+    background: linear-gradient(90deg, #8b5cf6, #7c3aed);
 }
 
 .cycle-card h3,
@@ -1376,6 +1466,20 @@ body::before {
 .chart-svg {
     width: 100%;
     height: 100%;
+}
+
+/* shadcn/ui Chart Styling */
+.recharts-wrapper {
+    background: transparent !important;
+}
+
+.recharts-cartesian-axis-tick-value,
+.recharts-text {
+    fill: var(--text-secondary) !important;
+}
+
+.recharts-cartesian-grid line {
+    stroke: rgba(255, 255, 255, 0.1) !important;
 }
 
 .animate-path {

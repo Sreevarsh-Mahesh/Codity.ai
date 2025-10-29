@@ -1,6 +1,8 @@
 'use client';
 
-import { LineChart, Card } from '@tremor/react';
+import { useEffect, useState } from 'react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 
 const mergeTimeData = [
   { month: 'Jan', 'Merge Time (days)': 4.5 },
@@ -12,22 +14,58 @@ const mergeTimeData = [
 ];
 
 export default function MergeTimeChart() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="cycle-card">
+        <h3>Merge Time Trends</h3>
+        <div style={{ height: '200px' }}></div>
+      </div>
+    );
+  }
+
   return (
     <div className="cycle-card">
       <h3>Merge Time Trends</h3>
-      <div className="cycle-chart">
-        <Card className="bg-transparent border-0 p-0">
-          <LineChart
-            data={mergeTimeData}
-            index="month"
-            categories={['Merge Time (days)']}
-            colors={['blue']}
-            className="h-48"
-            showAnimation={true}
-            animationDuration={1000}
+      <ChartContainer
+        config={{
+          'Merge Time (days)': {
+            label: 'Merge Time (days)',
+            color: '#3b82f6',
+          },
+        }}
+        className="h-[200px] w-full"
+      >
+        <LineChart data={mergeTimeData}>
+          <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+          <XAxis 
+            dataKey="month" 
+            className="text-xs fill-muted-foreground"
+            tickLine={false}
+            axisLine={false}
           />
-        </Card>
-      </div>
+          <YAxis 
+            className="text-xs fill-muted-foreground"
+            tickLine={false}
+            axisLine={false}
+            tickFormatter={(value) => `${value}d`}
+          />
+          <ChartTooltip content={<ChartTooltipContent />} />
+          <Line
+            type="monotone"
+            dataKey="Merge Time (days)"
+            stroke="#3b82f6"
+            strokeWidth={3}
+            dot={{ fill: '#3b82f6', strokeWidth: 2, r: 5 }}
+            activeDot={{ r: 7, stroke: '#3b82f6', strokeWidth: 3 }}
+          />
+        </LineChart>
+      </ChartContainer>
     </div>
   );
 }

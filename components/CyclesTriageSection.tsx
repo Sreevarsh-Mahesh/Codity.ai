@@ -7,46 +7,46 @@ export default function CyclesTriageSection() {
     <section className="cycles-triage-section">
       <div className="container">
         <div className="split-layout">
-          <div className="content-block">
-            <div className="text-content">
-              <h2>Track code quality metrics</h2>
-              <p>Monitor review velocity, bug detection rates, and code quality trends over time.</p>
-            </div>
-            <div className="visual-content">
-              <MergeTimeChart />
-            </div>
-          </div>
+              <div className="content-block">
+                <div className="text-content">
+                  <h2 className="section-heading section-heading-blue">Track code quality metrics</h2>
+                  <p>Monitor review velocity, bug detection rates, and code quality trends over time.</p>
+                </div>
+                <div className="visual-content">
+                  <MergeTimeChart />
+                </div>
+              </div>
 
-          <div className="content-block">
-            <div className="text-content">
-              <h2>AI-assisted code reviews</h2>
-              <p>Get instant feedback on security vulnerabilities, performance issues, and code smells.</p>
-            </div>
-            <div className="visual-content">
-              <AIHumanBalanceChart />
-            </div>
-          </div>
+              <div className="content-block">
+                <div className="text-content">
+                  <h2 className="section-heading section-heading-orange">AI-assisted code reviews</h2>
+                  <p>Get instant feedback on security vulnerabilities, performance issues, and code smells.</p>
+                </div>
+                <div className="visual-content">
+                  <AIHumanBalanceChart />
+                </div>
+              </div>
         </div>
         
-        <div className="split-layout" style={{marginTop: '4rem'}}>
-          <div className="content-block">
-            <div className="text-content">
-              <h2>Reviewer workload distribution</h2>
-              <p>Monitor how review tasks are distributed across your team members and identify bottlenecks.</p>
-            </div>
-            <div className="visual-content">
-              <ReviewerLoadChart />
-            </div>
-          </div>
+            <div className="split-layout" style={{marginTop: '4rem'}}>
+              <div className="content-block">
+                <div className="text-content">
+                  <h2 className="section-heading section-heading-green">Reviewer workload distribution</h2>
+                  <p>Monitor how review tasks are distributed across your team members and identify bottlenecks.</p>
+                </div>
+                <div className="visual-content">
+                  <ReviewerLoadChart />
+                </div>
+              </div>
 
-          <div className="content-block">
-            <div className="text-content">
-              <h2>Smart code analysis</h2>
-              <p>AI-powered insights help identify potential issues before they become problems.</p>
-            </div>
-            <div className="visual-content">
-              <div className="triage-card">
-                <h3>Smart Suggestions</h3>
+              <div className="content-block">
+                <div className="text-content">
+                  <h2 className="section-heading section-heading-purple">Smart code analysis</h2>
+                  <p>AI-powered insights help identify potential issues before they become problems.</p>
+                </div>
+                <div className="visual-content">
+                  <div className="triage-card">
+                    <h3>Smart Suggestions</h3>
                 <div className="triage-items">
                   <div className="triage-item">
                     <div className="item-header">

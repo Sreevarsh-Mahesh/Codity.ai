@@ -1,6 +1,8 @@
 'use client';
 
-import { BarChart, Card } from '@tremor/react';
+import { useEffect, useState } from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 
 const reviewerData = [
   { reviewer: 'Reviewer A', load: 25 },
@@ -10,22 +12,55 @@ const reviewerData = [
 ];
 
 export default function ReviewerLoadChart() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="cycle-card">
+        <h3>Reviewer Load</h3>
+        <div style={{ height: '200px' }}></div>
+      </div>
+    );
+  }
+
   return (
     <div className="cycle-card">
       <h3>Reviewer Load</h3>
-      <div className="cycle-chart">
-        <Card className="bg-transparent border-0 p-0">
-          <BarChart
-            data={reviewerData}
-            index="reviewer"
-            categories={['load']}
-            colors={['green']}
-            className="h-48"
-            showAnimation={true}
-            animationDuration={1000}
+      <ChartContainer
+        config={{
+          load: {
+            label: 'Load %',
+            color: '#10b981',
+          },
+        }}
+        className="h-[200px] w-full"
+      >
+        <BarChart data={reviewerData}>
+          <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+          <XAxis 
+            dataKey="reviewer" 
+            className="text-xs fill-muted-foreground"
+            tickLine={false}
+            axisLine={false}
           />
-        </Card>
-      </div>
+          <YAxis 
+            className="text-xs fill-muted-foreground"
+            tickLine={false}
+            axisLine={false}
+            tickFormatter={(value) => `${value}%`}
+          />
+          <ChartTooltip content={<ChartTooltipContent />} />
+          <Bar 
+            dataKey="load" 
+            fill="#10b981"
+            radius={[4, 4, 0, 0]}
+          />
+        </BarChart>
+      </ChartContainer>
     </div>
   );
 }
