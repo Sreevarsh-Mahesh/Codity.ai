@@ -390,18 +390,14 @@ body {
     position: relative;
     z-index: 10;
     filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.4));
-    animation: logo-float 6s ease-in-out infinite;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    animation: logo-float 6s ease-in-out infinite, logo-hourglass 12s ease-in-out infinite;
+    transition: filter 0.3s ease;
+    transform-origin: center center;
 }
 
 .animated-logo-container:hover .main-animated-logo {
-    transform: translateY(-20px) scale(1.1);
     filter: drop-shadow(0 0 60px rgba(255, 255, 255, 0.6));
-}
-
-/* Hourglass rotation - happens occasionally */
-.animated-logo-container {
-    animation: logo-hourglass 12s ease-in-out infinite;
+    transform: scale(1.1);
 }
 
 [data-theme="light"] .main-animated-logo {
@@ -413,17 +409,17 @@ body {
 }
 
 @keyframes logo-float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(0deg); }
 }
 
 @keyframes logo-hourglass {
-    0% { transform: rotate(0deg); }
-    85% { transform: rotate(0deg); }
-    87.5% { transform: rotate(180deg); }
-    90% { transform: rotate(180deg); }
-    92.5% { transform: rotate(360deg); }
-    100% { transform: rotate(360deg); }
+    0% { transform: translateY(0px) rotate(0deg); }
+    42.5% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(0px) rotate(180deg); }
+    57.5% { transform: translateY(0px) rotate(180deg); }
+    65% { transform: translateY(0px) rotate(360deg); }
+    100% { transform: translateY(0px) rotate(360deg); }
 }
 
 .animated-brace {
