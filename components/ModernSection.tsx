@@ -54,7 +54,7 @@ export default function ModernSection() {
                 <svg width="200" height="120" viewBox="0 0 200 120" className="feature-icon">
                   <rect x="40" y="30" width="120" height="60" rx="8" fill="#1a1a1a" stroke="#4f4" strokeWidth="2"/>
                   <circle cx="70" cy="50" r="12" fill="#4f4"/>
-                  <text x="65" y="56" fontSize="16" fill="#000" fontWeight="bold">✓</text>
+                  <path d="M63 50 L69 56 L77 46" stroke="#000" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
                   <line x1="90" y1="45" x2="140" y2="45" stroke="#666" strokeWidth="2"/>
                   <line x1="90" y1="55" x2="150" y2="55" stroke="#666" strokeWidth="2"/>
                   <line x1="90" y1="65" x2="130" y2="65" stroke="#666" strokeWidth="2"/>

@@ -50,7 +50,14 @@ export default function CyclesTriageSection() {
                 <div className="triage-items">
                   <div className="triage-item">
                     <div className="item-header">
-                      <span>🔒 Potential SQL injection vulnerability</span>
+                      <span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{marginRight: '6px', display: 'inline-block', verticalAlign: 'middle'}}>
+                          <rect x="1" y="6" width="12" height="7" rx="0.5" stroke="currentColor" strokeWidth="1"/>
+                          <line x1="7" y1="6" x2="7" y2="2" stroke="currentColor" strokeWidth="1"/>
+                          <circle cx="7" cy="3.5" r="0.5" fill="currentColor"/>
+                        </svg>
+                        Potential SQL injection vulnerability
+                      </span>
                     </div>
                     <div className="item-meta">
                       <div className="avatar">AI Review</div>

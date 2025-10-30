@@ -1,11 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 
 export default function PricingPage() {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
-
   return (
     <div className="greptile-pricing-wrapper">
       {/* Hero Section */}
@@ -18,23 +15,6 @@ export default function PricingPage() {
             <p className="greptile-pricing-subtitle">
               Choose the plan that fits your team. Start free, upgrade when you're ready.
             </p>
-            
-            {/* Billing Toggle */}
-            <div className="billing-toggle">
-              <button 
-                className={`billing-option ${billingCycle === 'monthly' ? 'active' : ''}`}
-                onClick={() => setBillingCycle('monthly')}
-              >
-                Monthly
-              </button>
-              <button 
-                className={`billing-option ${billingCycle === 'annual' ? 'active' : ''}`}
-                onClick={() => setBillingCycle('annual')}
-              >
-                Annual
-                <span className="billing-badge">Save 20%</span>
-              </button>
-            </div>
           </div>
         </div>
       </section>
@@ -47,7 +27,7 @@ export default function PricingPage() {
             {/* Developer Plan */}
             <div className="pricing-card">
               <div className="pricing-card-header">
-                <h3 className="pricing-card-title">Developer</h3>
+                <h3 className="pricing-card-title">Free</h3>
                 <div className="pricing-card-price">
                   <span className="price-amount">$0</span>
                   <span className="price-period">/month</span>
@@ -79,9 +59,7 @@ export default function PricingPage() {
               <div className="pricing-card-header">
                 <h3 className="pricing-card-title">Pro</h3>
                 <div className="pricing-card-price">
-                  <span className="price-amount">
-                    ${billingCycle === 'monthly' ? '11.99' : '9.59'}
-                  </span>
+                  <span className="price-amount">$11.99</span>
                   <span className="price-period">/user/month</span>
                 </div>
                 <p className="pricing-card-description">
@@ -110,9 +88,7 @@ export default function PricingPage() {
               <div className="pricing-card-header">
                 <h3 className="pricing-card-title">Team</h3>
                 <div className="pricing-card-price">
-                  <span className="price-amount">
-                    ${billingCycle === 'monthly' ? '31.99' : '25.59'}
-                  </span>
+                  <span className="price-amount">$31.99</span>
                   <span className="price-period">/user/month</span>
                 </div>
                 <p className="pricing-card-description">

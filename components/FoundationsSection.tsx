@@ -4,7 +4,6 @@ export default function FoundationsSection() {
       <div className="container">
         <div className="foundations-layout">
           <div className="foundations-content">
-            <div className="section-tag-small">Under the hood</div>
             <h2>Powered by cutting-edge AI</h2>
             <p className="foundations-desc">Codity combines state-of-the-art machine learning models with advanced static analysis to deliver the most accurate code reviews.</p>
             

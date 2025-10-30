@@ -6,7 +6,6 @@ export default function ProductIntelligenceSection() {
       <div className="container">
         <div className="split-content">
           <div className="content-left">
-            <div className="section-tag">📊 Analytics</div>
             <h2>Track review performance and code quality improvements</h2>
             <Link href="#" className="arrow-link">→</Link>
           </div>
