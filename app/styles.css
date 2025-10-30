@@ -362,6 +362,92 @@ body::after {
     50% { opacity: 0.8; transform: translateX(-50%) scale(1.1); }
 }
 
+/* Hero Code Background */
+.hero-code-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 0.85rem;
+    line-height: 1.8;
+    opacity: 0.35;
+    z-index: 1;
+    pointer-events: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 4rem 2rem;
+}
+
+.code-line {
+    display: flex;
+    align-items: center;
+    color: rgba(150, 150, 150, 0.5);
+    padding: 0.25rem 0;
+    transition: all 0.3s ease, opacity 0.2s ease;
+    white-space: pre;
+    position: relative;
+}
+
+.code-number {
+    display: inline-block;
+    width: 40px;
+    margin-right: 1rem;
+    user-select: none;
+    color: rgba(120, 120, 120, 0.4);
+}
+
+.code-content {
+    flex: 1;
+    overflow: hidden;
+    color: rgba(160, 160, 160, 0.45);
+}
+
+/* Raindrop effect on hover */
+.hero:hover .hero-code-background {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+}
+
+.hero:hover .code-line {
+    animation: codeRaindrop 0.8s ease forwards;
+}
+
+.hero:hover .code-line:nth-child(1) { animation-delay: 0s; }
+.hero:hover .code-line:nth-child(2) { animation-delay: 0.05s; }
+.hero:hover .code-line:nth-child(3) { animation-delay: 0.1s; }
+.hero:hover .code-line:nth-child(4) { animation-delay: 0.15s; }
+.hero:hover .code-line:nth-child(5) { animation-delay: 0.2s; }
+.hero:hover .code-line:nth-child(6) { animation-delay: 0.25s; }
+.hero:hover .code-line:nth-child(7) { animation-delay: 0.3s; }
+.hero:hover .code-line:nth-child(8) { animation-delay: 0.35s; }
+.hero:hover .code-line:nth-child(9) { animation-delay: 0.4s; }
+.hero:hover .code-line:nth-child(10) { animation-delay: 0.45s; }
+.hero:hover .code-line:nth-child(11) { animation-delay: 0.5s; }
+.hero:hover .code-line:nth-child(12) { animation-delay: 0.55s; }
+.hero:hover .code-line:nth-child(13) { animation-delay: 0.6s; }
+.hero:hover .code-line:nth-child(14) { animation-delay: 0.65s; }
+.hero:hover .code-line:nth-child(15) { animation-delay: 0.7s; }
+
+@keyframes codeRaindrop {
+    0% {
+        transform: translateY(0) scaleY(1);
+        opacity: inherit;
+    }
+    50% {
+        transform: translateY(8px) scaleY(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(0) scaleY(1);
+        opacity: inherit;
+    }
+}
+
+
 .hero-top {
     max-width: 1400px;
     width: 100%;
@@ -371,13 +457,13 @@ body::after {
     gap: 4rem;
     align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero-content {
     text-align: left;
     position: relative;
-    z-index: 1;
+    z-index: 3;
 }
 
 .hero-title {
@@ -446,6 +532,7 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 3;
 }
 
 .animated-logo-container {

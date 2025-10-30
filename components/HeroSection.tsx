@@ -4,6 +4,82 @@ import Image from 'next/image';
 export default function HeroSection() {
   return (
     <section className="hero">
+      <div className="hero-code-background">
+        {[
+          'function reviewCode(code) {',
+          '  return AI.analyze(code, { bugs: true });',
+          '}',
+          'const analyze = async (pr) => {',
+          '  const issues = await scan(pr);',
+          '  return issues;',
+          '};',
+          'class CodeReviewer {',
+          '  detectBugs(code) {',
+          '    return AI.scan(code);',
+          '  }',
+          '}',
+          'const review = (changes) => {',
+          '  return findIssues(changes);',
+          '};',
+          'function quickReview(files) {',
+          '  return analyzeSecurity(files);',
+          '}',
+          'const checker = new BugDetector();',
+          'checker.review(mainBranch);',
+          'async function checkCode(pr) {',
+          '  const report = await generate(pr);',
+          '  return report;',
+          '}',
+          'const detector = {',
+          '  scan: (code) => findBugs(code),',
+          '};',
+          'function deepAnalysis(codebase) {',
+          '  return comprehensiveReview(codebase);',
+          '}',
+          'const review = reviewCode(pr);',
+          'function scanSecurity(pr) {',
+          '  return detectVulnerabilities(pr);',
+          '}',
+          'const aiReview = AI.review(pr);',
+          'await aiReview.generateReport();',
+          'const issues = await scanner.detect(pr);',
+          'issues.forEach(fixBug);',
+          'class BugScanner {',
+          '  async analyze(code) {',
+          '    return this.scan(code);',
+          '  }',
+          '}',
+          'const scanner = new BugScanner();',
+          'scanner.analyze(codebase);',
+          'function detectIssues(changes) {',
+          '  return AI.analyze(changes);',
+          '}',
+          'const reviewService = {',
+          '  processPR: async (pr) => {',
+          '    return await analyze(pr);',
+          '  }',
+          '};',
+          'reviewService.processPR(pr);',
+          'class SecurityAnalyzer {',
+          '  check(code) {',
+          '    return vulnerabilities(code);',
+          '  }',
+          '}',
+          'const security = new SecurityAnalyzer();',
+          'security.check(mainBranch);',
+          'async function runChecks(files) {',
+          '  const results = await Promise.all(files.map(scan));',
+          '  return results;',
+          '}',
+          'const checks = await runChecks(prFiles);',
+          'checks.forEach(displayResults);',
+        ].map((line, i) => (
+          <div key={i} className="code-line" data-line={i + 1}>
+            <span className="code-number">{(i + 1).toString().padStart(3, '0')}</span>
+            <span className="code-content">{line}</span>
+          </div>
+        ))}
+      </div>
       <div className="hero-top">
         <div className="hero-content">
           <h1 className="hero-title">

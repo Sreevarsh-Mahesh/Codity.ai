@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { ClientScripts } from "@/components/ClientScripts";
+import { FloatingDockNav } from "@/components/FloatingDock";
 
 export const metadata: Metadata = {
   title: "Codity - AI-powered code review platform",
@@ -22,6 +23,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <FloatingDockNav />
           <ClientScripts />
         </ThemeProvider>
       </body>
