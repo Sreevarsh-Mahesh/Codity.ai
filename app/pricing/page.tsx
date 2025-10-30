@@ -44,26 +44,26 @@ export default function PricingPage() {
         <div className="container">
           <div className="pricing-grid">
             
-            {/* Free Plan */}
+            {/* Developer Plan */}
             <div className="pricing-card">
               <div className="pricing-card-header">
-                <h3 className="pricing-card-title">Free</h3>
+                <h3 className="pricing-card-title">Developer</h3>
                 <div className="pricing-card-price">
                   <span className="price-amount">$0</span>
                   <span className="price-period">/month</span>
                 </div>
                 <p className="pricing-card-description">
-                  Perfect for trying out Codity
+                  Perfect for individual developers
                 </p>
               </div>
               <div className="pricing-card-body">
                 <ul className="pricing-features">
-                  <li><span className="check-icon">✓</span> Up to 5 PRs per month</li>
-                  <li><span className="check-icon">✓</span> 1 repository</li>
-                  <li><span className="check-icon">✓</span> Basic bug detection</li>
-                  <li><span className="check-icon">✓</span> Community support</li>
-                  <li className="disabled"><span className="cross-icon">✗</span> Security scanning</li>
-                  <li className="disabled"><span className="cross-icon">✗</span> Custom rules</li>
+                  <li><span className="check-icon">✓</span> Basic AI PR reviews (limited/month)</li>
+                  <li><span className="check-icon">✓</span> Limited AI chat</li>
+                  <li><span className="check-icon">✓</span> 2 repository limit</li>
+                  <li className="disabled"><span className="cross-icon">✗</span> Jira integration</li>
+                  <li className="disabled"><span className="cross-icon">✗</span> Advanced analytics</li>
+                  <li className="disabled"><span className="cross-icon">✗</span> Custom review rules</li>
                 </ul>
               </div>
               <div className="pricing-card-footer">
@@ -80,24 +80,22 @@ export default function PricingPage() {
                 <h3 className="pricing-card-title">Pro</h3>
                 <div className="pricing-card-price">
                   <span className="price-amount">
-                    ${billingCycle === 'monthly' ? '29' : '23'}
+                    ${billingCycle === 'monthly' ? '11.99' : '9.59'}
                   </span>
                   <span className="price-period">/user/month</span>
                 </div>
                 <p className="pricing-card-description">
-                  For individual developers and small teams
+                  For professional developers
                 </p>
               </div>
               <div className="pricing-card-body">
                 <ul className="pricing-features">
-                  <li><span className="check-icon">✓</span> Unlimited PRs</li>
+                  <li><span className="check-icon">✓</span> Unlimited PR reviews</li>
+                  <li><span className="check-icon">✓</span> AI chat with repo context</li>
+                  <li><span className="check-icon">✓</span> Jira & GitHub issue linking</li>
+                  <li><span className="check-icon">✓</span> Basic analytics</li>
                   <li><span className="check-icon">✓</span> Unlimited repositories</li>
-                  <li><span className="check-icon">✓</span> Advanced bug detection</li>
-                  <li><span className="check-icon">✓</span> Security scanning</li>
-                  <li><span className="check-icon">✓</span> One-click fixes</li>
                   <li><span className="check-icon">✓</span> Priority support</li>
-                  <li><span className="check-icon">✓</span> Custom rules</li>
-                  <li><span className="check-icon">✓</span> GitHub & GitLab</li>
                 </ul>
               </div>
               <div className="pricing-card-footer">
@@ -113,24 +111,22 @@ export default function PricingPage() {
                 <h3 className="pricing-card-title">Team</h3>
                 <div className="pricing-card-price">
                   <span className="price-amount">
-                    ${billingCycle === 'monthly' ? '49' : '39'}
+                    ${billingCycle === 'monthly' ? '31.99' : '25.59'}
                   </span>
                   <span className="price-period">/user/month</span>
                 </div>
                 <p className="pricing-card-description">
-                  For growing teams that need more
+                  For growing engineering teams
                 </p>
               </div>
               <div className="pricing-card-body">
                 <ul className="pricing-features">
                   <li><span className="check-icon">✓</span> Everything in Pro</li>
                   <li><span className="check-icon">✓</span> Team analytics dashboard</li>
-                  <li><span className="check-icon">✓</span> Advanced security rules</li>
+                  <li><span className="check-icon">✓</span> Custom review rules</li>
+                  <li><span className="check-icon">✓</span> Priority support</li>
                   <li><span className="check-icon">✓</span> Team management</li>
-                  <li><span className="check-icon">✓</span> SSO authentication</li>
-                  <li><span className="check-icon">✓</span> API access</li>
-                  <li><span className="check-icon">✓</span> Dedicated support</li>
-                  <li><span className="check-icon">✓</span> SLA guarantee</li>
+                  <li><span className="check-icon">✓</span> Advanced collaboration tools</li>
                 </ul>
               </div>
               <div className="pricing-card-footer">
@@ -148,19 +144,19 @@ export default function PricingPage() {
                   <span className="price-amount">Custom</span>
                 </div>
                 <p className="pricing-card-description">
-                  For large organizations with specific needs
+                  For large organizations at scale
                 </p>
               </div>
               <div className="pricing-card-body">
                 <ul className="pricing-features">
                   <li><span className="check-icon">✓</span> Everything in Team</li>
-                  <li><span className="check-icon">✓</span> Self-hosted option</li>
+                  <li><span className="check-icon">✓</span> On-prem deployment</li>
+                  <li><span className="check-icon">✓</span> Org-level learning</li>
+                  <li><span className="check-icon">✓</span> Advanced analytics (reviewer load, merge time)</li>
+                  <li><span className="check-icon">✓</span> SSO / SCIM</li>
+                  <li><span className="check-icon">✓</span> SLA-backed uptime</li>
+                  <li><span className="check-icon">✓</span> Dedicated support team</li>
                   <li><span className="check-icon">✓</span> Custom integrations</li>
-                  <li><span className="check-icon">✓</span> Advanced compliance</li>
-                  <li><span className="check-icon">✓</span> Training & onboarding</li>
-                  <li><span className="check-icon">✓</span> Custom SLA</li>
-                  <li><span className="check-icon">✓</span> 24/7 priority support</li>
-                  <li><span className="check-icon">✓</span> Volume discounts</li>
                 </ul>
               </div>
               <div className="pricing-card-footer">
