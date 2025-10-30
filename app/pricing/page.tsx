@@ -178,33 +178,33 @@ export default function PricingPage() {
           </div>
           <div className="faq-grid">
             <div className="faq-item">
-              <h3 className="faq-question">Do you offer a free trial?</h3>
+              <h3 className="faq-question">What is Codity and how does it work?</h3>
               <p className="faq-answer">
-                Yes! All paid plans come with a 14-day free trial. No credit card required.
+                Codity is an AI-powered code review tool designed to enhance code quality and streamline development workflows. It identifies potential issues, suggests improvements, and ensures your code adheres to best practices.
               </p>
             </div>
             <div className="faq-item">
-              <h3 className="faq-question">Can I change plans later?</h3>
+              <h3 className="faq-question">Who can benefit from using Codity?</h3>
               <p className="faq-answer">
-                Absolutely. You can upgrade or downgrade your plan at any time. Changes take effect immediately.
+                Codity is perfect for development teams, solo programmers, and organizations aiming to improve code quality, reduce bugs, and accelerate deployment times.
               </p>
             </div>
             <div className="faq-item">
-              <h3 className="faq-question">What payment methods do you accept?</h3>
+              <h3 className="faq-question">Does Codity integrate with my existing tools?</h3>
               <p className="faq-answer">
-                We accept all major credit cards, PayPal, and can arrange invoicing for Enterprise customers.
+                Yes! Codity integrates seamlessly with popular version control systems like GitHub, GitLab, and Bitbucket, as well as CI/CD pipelines for effortless implementation.
               </p>
             </div>
             <div className="faq-item">
-              <h3 className="faq-question">Is my code secure?</h3>
+              <h3 className="faq-question">How does Codity ensure code security and privacy?</h3>
               <p className="faq-answer">
-                Yes. We use industry-standard encryption and never store your source code. We only analyze it in memory.
+                We prioritize your security by using encrypted connections and following industry-leading practices to ensure your code is safe. Your data is never shared or stored beyond what's necessary for the review process.
               </p>
             </div>
             <div className="faq-item">
-              <h3 className="faq-question">Do you offer refunds?</h3>
+              <h3 className="faq-question">How does Codity help improve development workflows?</h3>
               <p className="faq-answer">
-                Yes. If you're not satisfied within the first 30 days, we'll provide a full refund, no questions asked.
+                Codity streamlines code reviews by automatically detecting issues, offering actionable suggestions, and ensuring adherence to coding standards. This reduces review time, enhances collaboration, and helps teams ship high-quality code faster.
               </p>
             </div>
             <div className="faq-item">
