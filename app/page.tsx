@@ -20,11 +20,6 @@ export default function Home() {
       <CyclesTriageSection />
       <ProductIntelligenceSection />
       <AIFeaturesSection />
-      <SystemSection />
-      <IntegrationsSection />
-      <FoundationsSection />
-      <ProductSection />
-      <FeaturesDetailedSection />
     </>
   );
 }

@@ -5,21 +5,25 @@
 }
 
 :root {
-    /* Dark theme - Updated colors */
-    --bg-primary: #080808;
-    --bg-secondary: #121212;
-    --bg-tertiary: #0a0a0a;
-    --text-primary: #ECF4F7;
-    --text-secondary: #B8C5CC;
-    --text-tertiary: #8A9BA8;
+    /* Dark theme - Greptile-inspired faded colors */
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --bg-tertiary: #111111;
+    --text-primary: #ffffff;
+    --text-secondary: #d1d5db;
+    --text-tertiary: #9ca3af;
+    --accent-blue: #027FF7;
+    --accent-blue-faded: rgba(2, 127, 247, 0.2);
+    --accent-blue-glow: rgba(2, 127, 247, 0.1);
     --accent-purple: #7c3aed;
-    --accent-blue: #3b82f6;
     --accent-yellow: #f5a623;
-    --border-color: #2a2a2a;
-    --card-bg: #141414;
-    --card-text: #ECF4F7;
-    --nav-bg: rgba(8, 8, 8, 0.9);
+    --border-color: rgba(2, 127, 247, 0.1);
+    --card-bg: rgba(31, 41, 55, 0.5);
+    --card-border: rgba(2, 127, 247, 0.2);
+    --card-text: #ffffff;
+    --nav-bg: rgba(0, 0, 0, 0.95);
     --shadow: rgba(0, 0, 0, 0.6);
+    --shadow-blue: rgba(2, 127, 247, 0.1);
 }
 
 [data-theme="light"] {
@@ -89,7 +93,7 @@ body {
     position: relative;
 }
 
-/* Faint Halo Light Effect at Top */
+/* Faint Halo Light Effect at Top - Greptile-style faded blue */
 body::before {
     content: '';
     position: fixed;
@@ -98,15 +102,28 @@ body::before {
     transform: translateX(-50%);
     width: 1200px;
     height: 800px;
-    background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.08) 0%, rgba(59, 130, 246, 0.05) 30%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(2, 127, 247, 0.15) 0%, rgba(2, 127, 247, 0.08) 30%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 0;
     animation: gentlePulse 8s ease-in-out infinite;
 }
 
+/* Faded radial overlay for subtle aura */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(2, 127, 247, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
 [data-theme="light"] body::before {
-    background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.04) 0%, rgba(59, 130, 246, 0.03) 30%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(2, 127, 247, 0.03) 0%, rgba(2, 127, 247, 0.02) 30%, transparent 70%);
 }
 
 @keyframes gentlePulse {
@@ -172,15 +189,28 @@ body::before {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--text-primary);
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
+    background: linear-gradient(to right, #ffffff, rgba(2, 127, 247, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    background: linear-gradient(to right, #ffffff, #027FF7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 8px rgba(2, 127, 247, 0.4));
 }
 
 .logo svg {
     width: 24px;
     height: 24px;
+    filter: drop-shadow(0 0 4px rgba(2, 127, 247, 0.3));
 }
 
 .nav-left {
@@ -374,24 +404,24 @@ body::before {
 }
 
 .btn-primary {
-    background: var(--text-primary);
-    color: var(--bg-primary);
+    background: linear-gradient(135deg, #027FF7, rgba(2, 127, 247, 0.7));
+    color: #ffffff;
     padding: 0.875rem 2rem;
     border-radius: 10px;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     display: inline-block;
+    box-shadow: 0 4px 16px rgba(2, 127, 247, 0.3);
+    filter: drop-shadow(0 0 8px rgba(2, 127, 247, 0.4));
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
-}
-
-[data-theme="light"] .btn-primary:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 32px rgba(2, 127, 247, 0.5);
+    filter: drop-shadow(0 0 12px rgba(2, 127, 247, 0.6));
+    background: linear-gradient(135deg, #027FF7, #027FF7);
 }
 
 .btn-secondary {
@@ -1051,6 +1081,10 @@ body::before {
     text-align: center;
     margin-bottom: 1.5rem;
     font-weight: 600;
+    background: linear-gradient(to right, #ffffff, rgba(2, 127, 247, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .section-description {
@@ -1081,19 +1115,21 @@ body::before {
 }
 
 .feature-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
+    background: rgba(31, 41, 55, 0.5);
+    border: 1px solid rgba(2, 127, 247, 0.2);
     border-radius: 16px;
     overflow: hidden;
-    transition: all 0.4s;
+    transition: all 0.4s ease;
     cursor: pointer;
     color: var(--card-text);
+    box-shadow: 0 8px 32px rgba(2, 127, 247, 0.1);
 }
 
 .feature-card:hover {
     transform: translateY(-8px);
-    border-color: #404040;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(2, 127, 247, 0.4);
+    box-shadow: 0 20px 60px rgba(2, 127, 247, 0.2);
+    background: rgba(31, 41, 55, 0.7);
 }
 
 .card-visual {
@@ -1311,13 +1347,19 @@ body::before {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    background: #1a1a1a;
-    border: 1px solid #2a2a2a;
+    background: rgba(31, 41, 55, 0.5);
+    border: 1px solid rgba(2, 127, 247, 0.2);
     border-radius: 16px;
     padding: 2.5rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(2, 127, 247, 0.1);
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.content-block:hover {
+    border-color: rgba(2, 127, 247, 0.3);
+    box-shadow: 0 12px 48px rgba(2, 127, 247, 0.15);
 }
 
 .content-block::before {
@@ -1326,60 +1368,27 @@ body::before {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(2, 127, 247, 0.6), transparent);
 }
 
-.content-block:has(.section-heading-blue)::before {
-    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
-}
-
-.content-block:has(.section-heading-orange)::before {
-    background: linear-gradient(90deg, #f59e0b, #d97706);
-}
-
-.content-block:has(.section-heading-green)::before {
-    background: #10b981;
-}
-
-.content-block:has(.section-heading-purple)::before {
-    background: linear-gradient(90deg, #8b5cf6, #7c3aed);
-}
-
-/* Section Heading Color Coding */
+/* Section Heading Color Coding - Faded Greptile style */
 .section-heading {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.2;
-}
-
-.section-heading-blue {
-    color: #3b82f6;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    background: linear-gradient(to right, #ffffff, rgba(2, 127, 247, 0.8));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.section-heading-orange {
-    color: #f59e0b;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.section-heading-green {
-    color: #10b981;
-    background: linear-gradient(135deg, #10b981, #059669);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
+.section-heading-blue,
+.section-heading-orange,
+.section-heading-green,
 .section-heading-purple {
-    color: #8b5cf6;
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    background: linear-gradient(to right, #ffffff, rgba(2, 127, 247, 0.8));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
