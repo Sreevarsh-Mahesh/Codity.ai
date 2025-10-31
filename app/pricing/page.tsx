@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import DecryptedText from '@/components/ui/shadcn-io/decrypted-text';
+import BlurText from '@/components/ui/shadcn-io/blur-text';
 
 export default function PricingPage() {
   return (
@@ -9,11 +11,24 @@ export default function PricingPage() {
       <section className="greptile-pricing-hero">
         <div className="container">
           <div className="greptile-pricing-hero-content">
-            <h1 className="greptile-pricing-title">
-              Simple, transparent pricing
-            </h1>
+            <BlurText
+              text="Simple, transparent pricing"
+              delay={150}
+              animateBy="words"
+              direction="top"
+              className="greptile-pricing-title"
+              as="h1"
+            />
             <p className="greptile-pricing-subtitle">
-              Choose the plan that fits your team. Start free, upgrade when you're ready.
+              <DecryptedText
+                text="Choose the plan that fits your team. Start free, upgrade when you're ready."
+                speed={60}
+                maxIterations={15}
+                sequential={false}
+                className=""
+                encryptedClassName="opacity-50"
+                animateOn="hover"
+              />
             </p>
           </div>
         </div>

@@ -6637,3 +6637,46 @@ html {
         padding: 0.625rem 1.25rem;
     }
 }
+
+/* BlurText alignment fixes for headings */
+.blur-text.greptile-hero-title,
+.blur-text.greptile-pricing-title,
+.blur-text.greptile-blog-title,
+.blur-text.contact-hero-title {
+    display: block;
+    width: 100%;
+}
+
+.blur-text.greptile-hero-title span,
+.blur-text.greptile-pricing-title span,
+.blur-text.greptile-blog-title span,
+.blur-text.contact-hero-title span {
+    display: inline-block;
+}
+
+/* Decrypting Background Styles */
+.decrypting-background {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Ensure content layers are above background */
+body > *:not(.decrypting-background) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero section specific background */
+.hero {
+    position: relative;
+}
+
+.hero-top {
+    position: relative;
+    z-index: 1;
+}
