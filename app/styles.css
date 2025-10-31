@@ -373,13 +373,19 @@ body::after {
     font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
     font-size: 0.85rem;
     line-height: 1.8;
-    opacity: 0.45;
+    opacity: 0.5;
     z-index: 1;
     pointer-events: none;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
     padding: 3rem 2rem;
+    background: linear-gradient(
+        180deg,
+        rgba(2, 127, 247, 0.02) 0%,
+        transparent 50%,
+        rgba(2, 127, 247, 0.02) 100%
+    );
 }
 
 .code-line {
@@ -390,7 +396,7 @@ body::after {
     transition: all 0.3s ease, opacity 0.2s ease;
     white-space: pre;
     position: relative;
-    animation: decrypting 3s ease-in-out infinite;
+    animation: decrypting 4s ease-in-out infinite;
 }
 
 .code-number {
@@ -399,27 +405,127 @@ body::after {
     margin-right: 1rem;
     user-select: none;
     color: rgba(120, 120, 120, 0.5);
+    animation: flicker 3s ease-in-out infinite;
 }
 
 .code-content {
     flex: 1;
     overflow: hidden;
     color: rgba(160, 160, 160, 0.55);
+    position: relative;
 }
 
-/* Continuous decrypting animation */
+/* Cool decrypting animation with glitch effects */
 @keyframes decrypting {
     0% {
         filter: blur(0px);
-        opacity: 0.6;
+        opacity: 0.5;
+        transform: translateX(0);
     }
-    50% {
+    10% {
+        filter: blur(2px);
+        opacity: 0.3;
+        transform: translateX(2px);
+    }
+    20% {
+        filter: blur(0px);
+        opacity: 0.6;
+        transform: translateX(-2px);
+    }
+    30% {
         filter: blur(1px);
         opacity: 0.4;
+        transform: translateX(1px);
+    }
+    40% {
+        filter: blur(0px);
+        opacity: 0.5;
+        transform: translateX(0);
+    }
+    50% {
+        filter: blur(2px);
+        opacity: 0.3;
+        transform: translateX(-2px);
+    }
+    60% {
+        filter: blur(0px);
+        opacity: 0.6;
+        transform: translateX(2px);
+    }
+    70% {
+        filter: blur(1px);
+        opacity: 0.4;
+        transform: translateX(-1px);
+    }
+    80% {
+        filter: blur(0px);
+        opacity: 0.5;
+        transform: translateX(0);
     }
     100% {
         filter: blur(0px);
+        opacity: 0.5;
+        transform: translateX(0);
+    }
+}
+
+/* Flickering effect for line numbers */
+@keyframes flicker {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    25% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    75% {
+        opacity: 0.3;
+    }
+}
+
+/* Glitch effect for alternating lines */
+.code-line:nth-child(2n) {
+    animation: decrypting 4s ease-in-out infinite, glitch 6s ease-in-out infinite;
+}
+
+.code-line:nth-child(3n) {
+    animation: decrypting 4.5s ease-in-out infinite, glitch 7s ease-in-out infinite;
+}
+
+.code-line:nth-child(5n) {
+    animation: decrypting 5s ease-in-out infinite, glitch 8s ease-in-out infinite;
+}
+
+@keyframes glitch {
+    0%, 100% {
+        transform: translateX(0);
+        opacity: inherit;
+    }
+    5% {
+        transform: translateX(-3px);
+        opacity: 0.8;
+    }
+    10% {
+        transform: translateX(3px);
         opacity: 0.6;
+    }
+    15% {
+        transform: translateX(-2px);
+        opacity: 0.8;
+    }
+    20% {
+        transform: translateX(2px);
+        opacity: 0.6;
+    }
+    25% {
+        transform: translateX(0);
+        opacity: inherit;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: inherit;
     }
 }
 
