@@ -34,7 +34,10 @@ export default function Navbar() {
               height={37} 
               style={{width: '32px', height: 'auto'}}
             />
-            <span>codity</span>
+            <span className="logo-text">
+              <span className="logo-codity">Codity</span>
+              <span className="logo-ai">.ai</span>
+            </span>
           </Link>
         </div>
         <div className="nav-center">

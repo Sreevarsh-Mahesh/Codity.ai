@@ -191,21 +191,32 @@ body::after {
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    background: linear-gradient(to right, #ffffff, rgba(2, 127, 247, 0.8));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     transition: all 0.3s ease;
 }
 
-.logo:hover {
-    background: linear-gradient(to right, #ffffff, #027FF7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 0 8px rgba(2, 127, 247, 0.4));
+.logo-text {
+    display: inline-flex;
+    align-items: baseline;
+    font-weight: 700;
+    font-size: 1.1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    letter-spacing: -0.01em;
+}
+
+.logo-codity {
+    color: #3b82f6;
+}
+
+.logo-ai {
+    color: #2563eb;
+}
+
+.logo:hover .logo-codity {
+    color: #60a5fa;
+}
+
+.logo:hover .logo-ai {
+    color: #3b82f6;
 }
 
 .logo svg {
@@ -218,6 +229,7 @@ body::after {
     display: flex;
     align-items: center;
 }
+
 
 .nav-center {
     display: flex;
@@ -252,7 +264,8 @@ body::after {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    font-weight: 500;
     position: relative;
     padding: 0.5rem 0;
     transition: all 0.3s ease;
@@ -373,32 +386,37 @@ body::after {
 /* Simplified Hero Section */
 .hero-simple {
     margin-top: 80px;
-    min-height: calc(100vh - 80px);
-    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-prismatic-section {
+    width: 100%;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 }
 
-.hero-simple-content {
+.hero-content-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
     gap: 1.5rem;
-    position: relative;
-    z-index: 1;
 }
 
 .hero-logo-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.5rem;
-    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-logo {
@@ -435,8 +453,12 @@ body::after {
 }
 
 @media (max-width: 768px) {
-    .hero-simple {
-        padding: 4rem 1.5rem;
+    .hero-prismatic-section {
+        height: 400px;
+    }
+    
+    .hero-content-section {
+        padding: 3rem 1.5rem;
     }
     
     .hero-brand {
@@ -449,10 +471,6 @@ body::after {
     
     .hero-logo {
         width: 100px;
-    }
-    
-    .hero-logo-wrapper {
-        margin-top: 1.5rem;
     }
 }
 

@@ -5,22 +5,22 @@ import PrismaticBurst from '@/components/PrismaticBurst';
 
 export default function HeroSection() {
   return (
-    <section className="hero-simple" style={{ position: 'relative' }}>
-      <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
-        <PrismaticBurst
-          animationType="rotate3d"
-          intensity={2}
-          speed={0.5}
-          distort={1.0}
-          paused={false}
-          offset={{ x: 0, y: 0 }}
-          hoverDampness={0.25}
-          rayCount={24}
-          mixBlendMode="lighten"
-          colors={['#027FF7', '#7c3aed', '#ffffff']}
-        />
-      </div>
-      <div className="hero-simple-content">
+    <section className="hero-simple">
+      <div className="hero-prismatic-section">
+        <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
+          <PrismaticBurst
+            animationType="rotate3d"
+            intensity={2}
+            speed={0.5}
+            distort={1.0}
+            paused={false}
+            offset={{ x: 0, y: 0 }}
+            hoverDampness={0.25}
+            rayCount={24}
+            mixBlendMode="lighten"
+            colors={['#027FF7', '#7c3aed', '#ffffff']}
+          />
+        </div>
         <div className="hero-logo-wrapper">
           <Image 
             src="/logo-main.svg" 
@@ -31,6 +31,8 @@ export default function HeroSection() {
             className="hero-logo"
           />
         </div>
+      </div>
+      <div className="hero-content-section">
         <p className="hero-description">
           AI-powered code reviewer to help spot the toughest bugs and save hours.
           <br />

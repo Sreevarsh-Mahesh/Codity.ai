@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import DecryptedText from '@/components/ui/shadcn-io/decrypted-text';
 import BlurText from '@/components/ui/shadcn-io/blur-text';
 import Prism from '@/components/Prism';
 
@@ -31,17 +30,6 @@ export default function FeaturesPage() {
               className="greptile-hero-title"
               as="h1"
             />
-            <p className="greptile-hero-subtitle">
-              <DecryptedText
-                text="Codity understands your entire codebase to provide intelligent, context-aware reviews in seconds."
-                speed={60}
-                maxIterations={15}
-                sequential={false}
-                className=""
-                encryptedClassName="opacity-50"
-                animateOn="hover"
-              />
-            </p>
             <div className="greptile-hero-actions">
               <Link href="/pricing" className="greptile-btn-primary">Start Free Trial</Link>
               <Link href="/contact" className="greptile-btn-secondary">Book a Demo</Link>
