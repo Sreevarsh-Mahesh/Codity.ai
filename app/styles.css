@@ -4780,6 +4780,24 @@ html {
 .greptile-feature-card:nth-child(4) { animation-delay: 0.4s; }
 .greptile-feature-card:nth-child(5) { animation-delay: 0.5s; }
 .greptile-feature-card:nth-child(6) { animation-delay: 0.6s; }
+.greptile-feature-card:nth-child(7) { animation-delay: 0.7s; }
+.greptile-feature-card:nth-child(8) { animation-delay: 0.8s; }
+.greptile-feature-card:nth-child(9) { animation-delay: 0.9s; }
+.greptile-feature-card:nth-child(10) { 
+    animation-delay: 1.0s; 
+    grid-column: span 1;
+}
+
+/* Center the 10th card when it's the only one in its row */
+@media (min-width: 768px) {
+    .greptile-features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .greptile-feature-card:nth-child(10) {
+        grid-column: 2 / 3;
+    }
+}
 
 .greptile-feature-card:hover {
     transform: translateY(-4px);

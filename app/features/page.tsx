@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import BlurText from '@/components/ui/shadcn-io/blur-text';
 import Prism from '@/components/Prism';
+import FeatureFlowSection from '../../components/FeatureFlowSection';
 
 export default function FeaturesPage() {
   return (
@@ -43,16 +44,12 @@ export default function FeaturesPage() {
         <div className="container">
           <div className="greptile-stats-grid">
             <div className="greptile-stat">
-              <div className="greptile-stat-value">2s</div>
-              <div className="greptile-stat-label">Average review time</div>
+              <div className="greptile-stat-value">3627</div>
+              <div className="greptile-stat-label">Bugs caught</div>
             </div>
             <div className="greptile-stat">
-              <div className="greptile-stat-value">98.7%</div>
-              <div className="greptile-stat-label">Detection accuracy</div>
-            </div>
-            <div className="greptile-stat">
-              <div className="greptile-stat-value">10B+</div>
-              <div className="greptile-stat-label">Lines of training data</div>
+              <div className="greptile-stat-value">3.31</div>
+              <div className="greptile-stat-label">Bugs every PR</div>
             </div>
           </div>
         </div>
@@ -73,17 +70,17 @@ export default function FeaturesPage() {
             <div className="greptile-feature-card">
               <div className="greptile-feature-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                  <path d="M8 9h8M8 13h6M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                 </svg>
               </div>
-              <h3 className="greptile-feature-title">Lightning Fast Reviews</h3>
+              <h3 className="greptile-feature-title">Code Navigation - Talk to Your Code</h3>
               <p className="greptile-feature-description">
-                Get comprehensive code reviews in under 2 seconds. No more waiting hours for feedback.
+                Ask anything. Find functions, compare branches, plan new features.
               </p>
               <ul className="greptile-feature-list">
-                <li>Reviews in &lt;2s</li>
-                <li>Real-time feedback</li>
-                <li>Instant suggestions</li>
+                <li>Instant answers</li>
+                <li>Repo-aware search</li>
+                <li>Context-driven navigation</li>
               </ul>
             </div>
 
@@ -95,14 +92,14 @@ export default function FeaturesPage() {
                   <path d="M12 6v6l4 2"/>
                 </svg>
               </div>
-              <h3 className="greptile-feature-title">Full Codebase Context</h3>
+              <h3 className="greptile-feature-title">AI That Understands Your Codebase</h3>
               <p className="greptile-feature-description">
-                Unlike other tools, Codity understands your entire codebase, not just the changed files.
+                Not just your PR — your whole project. Structure, patterns, history — fully in context.
               </p>
               <ul className="greptile-feature-list">
-                <li>Deep codebase analysis</li>
-                <li>Cross-file understanding</li>
-                <li>Contextual suggestions</li>
+                <li>Full project awareness</li>
+                <li>Pattern recognition</li>
+                <li>Historical context</li>
               </ul>
             </div>
 
@@ -110,17 +107,17 @@ export default function FeaturesPage() {
             <div className="greptile-feature-card">
               <div className="greptile-feature-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
                 </svg>
               </div>
-              <h3 className="greptile-feature-title">Security First</h3>
+              <h3 className="greptile-feature-title">Seamless Jira Sync</h3>
               <p className="greptile-feature-description">
-                Automatic detection of security vulnerabilities, exposed secrets, and OWASP Top 10 issues.
+                Auto-links tickets, summarizes changes, and flags missing features — automatically.
               </p>
               <ul className="greptile-feature-list">
-                <li>CVE scanning</li>
-                <li>Secret detection</li>
-                <li>OWASP coverage</li>
+                <li>Auto ticket linking</li>
+                <li>Change summaries</li>
+                <li>Feature tracking</li>
               </ul>
             </div>
 
@@ -128,17 +125,17 @@ export default function FeaturesPage() {
             <div className="greptile-feature-card">
               <div className="greptile-feature-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
               </div>
-              <h3 className="greptile-feature-title">One-Click Fixes</h3>
+              <h3 className="greptile-feature-title">Built for Focus — Not Fatigue</h3>
               <p className="greptile-feature-description">
-                Apply AI-suggested fixes with a single click. Refactor, optimize, and fix bugs instantly.
+                Less noise, more clarity. Only the comments that matter.
               </p>
               <ul className="greptile-feature-list">
-                <li>Auto-fix suggestions</li>
-                <li>Smart refactoring</li>
-                <li>Code optimization</li>
+                <li>Smart filtering</li>
+                <li>Priority-based alerts</li>
+                <li>Actionable insights only</li>
               </ul>
             </div>
 
@@ -146,17 +143,17 @@ export default function FeaturesPage() {
             <div className="greptile-feature-card">
               <div className="greptile-feature-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 2v20M2 12h20"/>
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
                 </svg>
               </div>
-              <h3 className="greptile-feature-title">Custom Rules</h3>
+              <h3 className="greptile-feature-title">Fix Smarter, Not Harder</h3>
               <p className="greptile-feature-description">
-                Enforce your team's coding standards and best practices with customizable rules.
+                AI comments with ready-to-commit fixes. Lint-safe. Reasoned. Actionable.
               </p>
               <ul className="greptile-feature-list">
-                <li>Custom guidelines</li>
-                <li>Style enforcement</li>
-                <li>Team standards</li>
+                <li>One-click fixes</li>
+                <li>Lint-safe solutions</li>
+                <li>Context-aware refactoring</li>
               </ul>
             </div>
 
@@ -164,19 +161,89 @@ export default function FeaturesPage() {
             <div className="greptile-feature-card">
               <div className="greptile-feature-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                  <line x1="9" y1="9" x2="15" y2="15"/>
-                  <line x1="15" y1="9" x2="9" y2="15"/>
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
               </div>
-              <h3 className="greptile-feature-title">Smart Integrations</h3>
+              <h3 className="greptile-feature-title">Collective Memory</h3>
               <p className="greptile-feature-description">
-                Works seamlessly with GitHub, GitLab, and your existing development tools.
+                Every repo. Every PR. Every decision. One collective memory for your entire codebase.
               </p>
               <ul className="greptile-feature-list">
-                <li>GitHub integration</li>
-                <li>GitLab support</li>
-                <li>API access</li>
+                <li>Cross-team consistency</li>
+                <li>Historical decision tracking</li>
+                <li>Unified knowledge base</li>
+              </ul>
+            </div>
+
+            {/* Feature 7 */}
+            <div className="greptile-feature-card">
+              <div className="greptile-feature-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M7 7h10M7 12h10M7 17h10"/>
+                </svg>
+              </div>
+              <h3 className="greptile-feature-title">Tagged for Clarity</h3>
+              <p className="greptile-feature-description">
+                Each comment comes with priority & type — security, logic, maintainability.
+              </p>
+              <ul className="greptile-feature-list">
+                <li>Priority tagging</li>
+                <li>Category classification</li>
+                <li>No noise, just focus</li>
+              </ul>
+            </div>
+
+            {/* Feature 8 */}
+            <div className="greptile-feature-card">
+              <div className="greptile-feature-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                </svg>
+              </div>
+              <h3 className="greptile-feature-title">Security + Logic Layer</h3>
+              <p className="greptile-feature-description">
+                Find bugs and vulnerabilities early. Goes beyond style and syntax.
+              </p>
+              <ul className="greptile-feature-list">
+                <li>Security scanning</li>
+                <li>Logic analysis</li>
+                <li>Early detection</li>
+              </ul>
+            </div>
+
+            {/* Feature 9 */}
+            <div className="greptile-feature-card">
+              <div className="greptile-feature-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+              </div>
+              <h3 className="greptile-feature-title">Insights That Matter</h3>
+              <p className="greptile-feature-description">
+                Visualize review speed, merge health, and AI impact. Make better engineering calls, fast.
+              </p>
+              <ul className="greptile-feature-list">
+                <li>Performance metrics</li>
+                <li>Health visualization</li>
+                <li>Data-driven decisions</li>
+              </ul>
+            </div>
+
+            {/* Feature 10 */}
+            <div className="greptile-feature-card">
+              <div className="greptile-feature-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+                </svg>
+              </div>
+              <h3 className="greptile-feature-title">Your Code, Your Control</h3>
+              <p className="greptile-feature-description">
+                Cloud or self-hosted — same power, your choice.
+              </p>
+              <ul className="greptile-feature-list">
+                <li>Cloud deployment</li>
+                <li>Self-hosted option</li>
+                <li>Full data control</li>
               </ul>
             </div>
           </div>
@@ -214,6 +281,9 @@ export default function FeaturesPage() {
           </div>
         </div>
       </section>
+
+      {/* How It Works - Interactive */}
+      <FeatureFlowSection />
 
       {/* CTA Section */}
       <section className="greptile-cta">
