@@ -44,6 +44,7 @@ export default function Navbar() {
           <Link href="/contact" className={`nav-link ${pathname === '/contact' ? 'active' : ''}`}>Contact</Link>
         </div>
         <div className="nav-right">
+          <Link href="/contact" className="nav-contact-link">Contact us</Link>
           <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
             <svg className="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="5"/>
