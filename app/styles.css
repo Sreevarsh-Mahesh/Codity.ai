@@ -370,6 +370,92 @@ body::after {
     justify-content: center;
 }
 
+/* Simplified Hero Section */
+.hero-simple {
+    margin-top: 80px;
+    min-height: calc(100vh - 80px);
+    padding: 6rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-simple-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 800px;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+.hero-logo {
+    width: 128px;
+    height: auto;
+    filter: drop-shadow(0 0 8px rgba(2, 127, 247, 0.3));
+}
+
+.hero-brand {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #ffffff, rgba(2, 127, 247, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 700px;
+}
+
+.hero-simple .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .hero-simple {
+        padding: 4rem 1.5rem;
+    }
+    
+    .hero-brand {
+        font-size: 2.25rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .hero-logo {
+        width: 100px;
+    }
+    
+    .hero-logo-wrapper {
+        margin-top: 1.5rem;
+    }
+}
+
 .hero::before {
     content: '';
     position: absolute;
@@ -4494,12 +4580,18 @@ html {
     padding: 8rem 2rem 6rem;
     background: var(--bg-primary);
     text-align: center;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .greptile-hero-content {
     max-width: 800px;
     margin: 0 auto;
     animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    z-index: 1;
 }
 
 .greptile-hero-title {

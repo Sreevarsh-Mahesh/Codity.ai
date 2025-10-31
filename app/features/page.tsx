@@ -1,16 +1,30 @@
 import Link from 'next/link';
 import DecryptedText from '@/components/ui/shadcn-io/decrypted-text';
 import BlurText from '@/components/ui/shadcn-io/blur-text';
+import Prism from '@/components/Prism';
 
 export default function FeaturesPage() {
   return (
     <div className="greptile-features-wrapper">
       {/* Minimalist Hero */}
-      <section className="greptile-hero">
+      <section className="greptile-hero" style={{ position: 'relative' }}>
+        <div style={{ width: '100%', height: '600px', position: 'absolute', top: 0, left: 0 }}>
+          <Prism
+            animationType="rotate"
+            timeScale={0.5}
+            height={3.5}
+            baseWidth={5.5}
+            scale={3.6}
+            hueShift={0}
+            colorFrequency={1}
+            noise={0.5}
+            glow={1}
+          />
+        </div>
         <div className="container">
           <div className="greptile-hero-content">
             <BlurText
-              text="Ship faster with AI-powered code reviews"
+              text="Features"
               delay={150}
               animateBy="words"
               direction="top"
