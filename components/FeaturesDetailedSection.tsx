@@ -1,12 +1,28 @@
+import BlurText from '@/components/ui/shadcn-io/blur-text';
+import DecryptedText from '@/components/ui/shadcn-io/decrypted-text';
+
 export default function FeaturesDetailedSection() {
   return (
     <section id="features" className="features-detailed-section">
       <div className="container">
         <div className="section-header-center">
-          <h2 className="mega-title-enhanced">Everything You Need to Ship Better Code</h2>
+          <BlurText
+            text="Everything You Need to Ship Better Code"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="mega-title-enhanced"
+          />
           <p className="section-subtitle">
-            Comprehensive tools and intelligent automation designed to accelerate your development workflow 
-            while maintaining the highest standards of code quality and security.
+            <DecryptedText
+              text="Comprehensive tools and intelligent automation designed to accelerate your development workflow while maintaining the highest standards of code quality and security."
+              speed={60}
+              maxIterations={15}
+              sequential={false}
+              className=""
+              encryptedClassName="opacity-50"
+              animateOn="hover"
+            />
           </p>
         </div>
 

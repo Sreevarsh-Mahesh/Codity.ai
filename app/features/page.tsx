@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import DecryptedText from '@/components/ui/shadcn-io/decrypted-text';
+import BlurText from '@/components/ui/shadcn-io/blur-text';
 
 export default function FeaturesPage() {
   return (
@@ -7,11 +9,24 @@ export default function FeaturesPage() {
       <section className="greptile-hero">
         <div className="container">
           <div className="greptile-hero-content">
-            <h1 className="greptile-hero-title">
-              Ship faster with AI-powered code reviews
-            </h1>
+            <BlurText
+              text="Ship faster with AI-powered code reviews"
+              delay={150}
+              animateBy="words"
+              direction="top"
+              className="greptile-hero-title"
+              as="h1"
+            />
             <p className="greptile-hero-subtitle">
-              Codity understands your entire codebase to provide intelligent, context-aware reviews in seconds.
+              <DecryptedText
+                text="Codity understands your entire codebase to provide intelligent, context-aware reviews in seconds."
+                speed={60}
+                maxIterations={15}
+                sequential={false}
+                className=""
+                encryptedClassName="opacity-50"
+                animateOn="hover"
+              />
             </p>
             <div className="greptile-hero-actions">
               <Link href="/pricing" className="greptile-btn-primary">Start Free Trial</Link>

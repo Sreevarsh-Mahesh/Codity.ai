@@ -1,10 +1,17 @@
 import Link from 'next/link';
+import BlurText from '@/components/ui/shadcn-io/blur-text';
 
 export default function ModernSection() {
   return (
     <section className="modern-section">
       <div className="container">
-        <h2 className="section-title">Made for modern development teams</h2>
+        <BlurText
+          text="Made for modern development teams"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className="section-title"
+        />
         <p className="section-description">
           Codity is built on the principles that define exceptional engineering teams: thorough code review, rapid iteration, and an unwavering commitment to code quality. <Link href="#" className="link-arrow">Try Codity today</Link>
         </p>

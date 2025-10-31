@@ -1,10 +1,29 @@
+import BlurText from '@/components/ui/shadcn-io/blur-text';
+import DecryptedText from '@/components/ui/shadcn-io/decrypted-text';
+
 export default function ProductSection() {
   return (
     <section id="product" className="product-section">
       <div className="container">
         <div className="section-header-center">
-          <h2 className="mega-title">Everything you need for perfect code reviews</h2>
-          <p className="mega-description">Codity brings together AI-powered analysis, security scanning, and team collaboration in one powerful platform</p>
+          <BlurText
+            text="Everything you need for perfect code reviews"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="mega-title"
+          />
+          <p className="mega-description">
+            <DecryptedText
+              text="Codity brings together AI-powered analysis, security scanning, and team collaboration in one powerful platform"
+              speed={60}
+              maxIterations={15}
+              sequential={false}
+              className=""
+              encryptedClassName="opacity-50"
+              animateOn="hover"
+            />
+          </p>
         </div>
 
         <div className="product-features">

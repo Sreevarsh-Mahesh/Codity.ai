@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import BlurText from '@/components/ui/shadcn-io/blur-text';
 
 // Blog post interface
 interface BlogPost {
@@ -244,9 +245,14 @@ export default function BlogPage() {
       <section className="greptile-blog-hero">
         <div className="container">
           <div className="greptile-blog-hero-content">
-            <h1 className="greptile-blog-title">
-              Insights & Updates
-            </h1>
+            <BlurText
+              text="Insights & Updates"
+              delay={150}
+              animateBy="words"
+              direction="top"
+              className="greptile-blog-title"
+              as="h1"
+            />
             <p className="greptile-blog-subtitle">
               The latest thoughts on code review, development best practices, and building better software.
             </p>

@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import DecryptedText from '@/components/ui/shadcn-io/decrypted-text';
+import BlurText from '@/components/ui/shadcn-io/blur-text';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -35,9 +37,24 @@ export default function ContactPage() {
       <section className="contact-hero">
         <div className="container">
           <div className="contact-hero-content">
-            <h1 className="contact-hero-title">Get in Touch</h1>
+            <BlurText
+              text="Get in Touch"
+              delay={150}
+              animateBy="words"
+              direction="top"
+              className="contact-hero-title"
+              as="h1"
+            />
             <p className="contact-hero-subtitle">
-              Have questions about Codity? We'd love to hear from you.
+              <DecryptedText
+                text="Have questions about Codity? We'd love to hear from you."
+                speed={60}
+                maxIterations={15}
+                sequential={false}
+                className=""
+                encryptedClassName="opacity-50"
+                animateOn="hover"
+              />
             </p>
           </div>
         </div>
